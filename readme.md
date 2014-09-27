@@ -15,3 +15,4 @@ Simple application which displays a Quote on regular intervals of time.
 - feedparser (python module)
 
 ##How?
+It creates a json file having the data of previous day. It then fetches the RSS feed of the liked quotes of mine from the Goodreads. Then selects a quote randomly and displays it.
