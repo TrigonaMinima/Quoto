@@ -1,10 +1,17 @@
-Thinking stuff
+Quoto
 ------------------
 
-Simple script to display a Quote (to be displayed on startup) (Python3)
+Simple application which displays a Quote on regular intervals of time.
 
-<b>Todo</b> -
+##Features
+- Same quote on a particular day  
+- Random quote everyday  
+- Quote fetched from my goodreads liked quotes
+- Quoted displayed on a regular interval (3 hours interval)
 
-1.Update my quote list from my liked goodreads quotes (to decide whether to use api or simple web scraping)
+##Tools Used
+- Python 3.4
+- PyQt 4
+- feedparser (python module)
 
-2.Make the display a little bit more better
+##How?
