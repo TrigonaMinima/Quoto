@@ -10,9 +10,14 @@ class Example(QtGui.QWidget):
 
     def initUI(self):
 
-        self.text = 'My quote'
-
-        self.setGeometry(300, 300, 280, 170)
+        self.text = 'My quote is here...can u see shivam ?......or u want a much bigger box for it!! My quote is here...can u see shivam ?......or u want a much bigger box for it!!'
+        if (len(self.text) < 48):
+            self.setGeometry(300, 300, 280, 170)
+        else :
+            n= len(self.text)
+            l = n/2
+            self.text=self.text[:l]+'\n'+self.text[l:]
+            self.setGeometry(300, 300, 280+3*len(self.text) + 10, 170)
         self.setWindowTitle('Daily Quote')
         self.show()
 
