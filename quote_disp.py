@@ -1,6 +1,7 @@
 import sys
 from PyQt4 import QtGui, QtCore
 
+
 class Example(QtGui.QWidget):
 
     def __init__(self):
@@ -22,7 +23,6 @@ class Example(QtGui.QWidget):
         self.show()
 
     def paintEvent(self, event):
-
         qp = QtGui.QPainter()
         qp.begin(self)
         self.drawText(event, qp)

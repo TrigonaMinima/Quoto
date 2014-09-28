@@ -1,15 +1,17 @@
-from PyQt4 import QtGui, uic
+from PyQt4 import QtGui, QtCore
+from quoto import Ui_Form
 import sys
 
 
-class win(QtGui.QMainWindow):
+class Quo_win(QtGui.QWidget):
 
-    def __init__(self):
-        super(win, self).__init__()
-        uic.loadUi('GUI/quoto.ui', self)
+    def __init__(self, parent=None):
+        super(Quo_win, self).__init__(parent)
+        self.ui = Ui_Form()
+        self.ui.text = 'sdsjhdks'
         self.show()
 
 if __name__ == '__main__':
     app = QtGui.QApplication(sys.argv)
-    window = win()
+    window = Quo_win()
     sys.exit(app.exec_())
