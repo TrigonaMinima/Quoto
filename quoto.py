@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'GUI/quoto.ui'
 #
-# Created: Sun Sep 28 05:06:13 2014
+# Created: Mon Sep 29 08:02:16 2014
 #      by: PyQt4 UI code generator 4.10.4
 #
 # WARNING! All changes made in this file will be lost!
