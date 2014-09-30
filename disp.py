@@ -1,5 +1,6 @@
 from PyQt4 import QtGui, QtCore
 from quoto import Ui_Form
+import fetch
 import sys
 
 
@@ -13,7 +14,7 @@ class Quo_win(QtGui.QWidget):
         self.insert_quote()
 
     def insert_quote(self):
-            self.ui.textBrowser.setHtml("Shivam Rana")
+            self.ui.textBrowser.setHtml(fetch.main())
 
 
 if __name__ == '__main__':
