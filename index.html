@@ -44,19 +44,39 @@
 </li>
 <li>Random quote everyday<br>
 </li>
-<li>Quote fetched from my goodreads liked quotes</li>
+<li>Quote fetched from my Goodreads' liked quotes</li>
 <li>Quoted displayed on a regular interval (3 hours interval)</li>
 </ul><h2>
 <a name="tools-used" class="anchor" href="#tools-used"><span class="octicon octicon-link"></span></a>Tools Used</h2>
 
 <ul>
 <li>Python 3.4</li>
+<li>QtDesigner4</li>
 <li>PyQt 4</li>
 <li>feedparser (python module)</li>
 </ul><h2>
 <a name="how" class="anchor" href="#how"><span class="octicon octicon-link"></span></a>How?</h2>
 
-<p>It creates a json file having the data of previous day. It then fetches the RSS feed of the liked quotes of mine from the Goodreads. Then selects a quote randomly and displays it.</p>
+<p>A json file (<em>local.json</em>) is created having the following format, the relevance of each key is explained in the comments.</p>
+
+<pre><code>{
+    "date": "",            # The current date
+    "update": "",       # The last date when the number of pages of Goodreads' quotes are updated
+    "pages": ,             # Number of pages you have in the Goodreads' liked quotes
+    "pre_quo1": "",  # Last day quote
+    "pre_quo2": "",  # Last to last day quote
+    "today_quo": "" # today's quote
+}
+</code></pre>
+
+<p>When the <em>disp.py</em> is run, it calls the main() function of <em>fetch.py</em> module. What this function does is, it checks if the <em>local.json</em> exists. If it doesn't then it creates it and then returns the quote, saving the current date, up-date, number of pages and the number of quotes on each page, today's quote. If it does then the update is checked against today's date. If the difference is more than 30 days then the data is updated else it goes to next step. In the next step the current date is checked if is today's date or not. If it is not then a page out of total pages is randomly selected followed by the random selection of a quote number. This quote is fetched and returned. If the current date is today's date then the same quote is returned which was used previously. Thus, no fetching was done from the Goodreads' server in this case.
+This above returned quote is sent to the QTextBrowser and displayed in a widget. Here the widget was designed using <strong>QtDesigner</strong> and quotes were fetched using <strong>feedparser</strong> which uses the RSS feed links of my Goodreads' liked quotes. Here, have a look at the GUI made,</p>
+
+<p>img here</p>
+
+<p>Now, after this final script, I wrote a bash script which calls this above disp.py*. This step was to call the script at an hourly basis using <strong>cron jobs</strong>. Thus, now this quote is displayed each hour according to the above rules of new or same quote.</p>
+
+<p>SR.</p>
       </section>
     </div>
 
@@ -74,7 +94,7 @@
           </script>
           <script type="text/javascript">
             try {
-              var pageTracker = _gat._getTracker("UA-51512073-1");
+              var pageTracker = _gat._getTracker("UA-51512073-2");
             pageTracker._trackPageview();
             } catch(err) {}
           </script>
