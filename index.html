@@ -19,7 +19,7 @@
           <a id="forkme_banner" href="https://github.com/TrigonaMinima/Quoto">View on GitHub</a>
 
           <h1 id="project_title">Quoto</h1>
-          <h2 id="project_tagline">Qoute on Display</h2>
+          <h2 id="project_tagline">Quote on Display</h2>
 
             <section id="downloads">
               <a class="zip_download_link" href="https://github.com/TrigonaMinima/Quoto/zipball/master">Download this project as a .zip file</a>
@@ -72,7 +72,7 @@
 <p>When the <em>disp.py</em> is run, it calls the main() function of <em>fetch.py</em> module. What this function does is, it checks if the <em>local.json</em> exists. If it doesn't then it creates it and then returns the quote, saving the current date, up-date, number of pages and the number of quotes on each page, today's quote. If it does then the update is checked against today's date. If the difference is more than 30 days then the data is updated else it goes to next step. In the next step the current date is checked if is today's date or not. If it is not then a page out of total pages is randomly selected followed by the random selection of a quote number. This quote is fetched and returned. If the current date is today's date then the same quote is returned which was used previously. Thus, no fetching was done from the Goodreads' server in this case.
 This above returned quote is sent to the QTextBrowser and displayed in a widget. Here the widget was designed using <strong>QtDesigner</strong> and quotes were fetched using <strong>feedparser</strong> which uses the RSS feed links of my Goodreads' liked quotes. Here, have a look at the GUI made,</p>
 
-<img src="images/screen1.png" alt="Screen View" style="width:800px;height:600px; align="center" ">
+<img src="images/screen1.png" alt="Screen View" style="width:652px;height:155px; align="center" ">
 
 <p>Now, after this final script, I wrote a bash script which calls this above disp.py*. This step was to call the script at an hourly basis using <strong>cron jobs</strong>. Thus, now this quote is displayed each hour according to the above rules of new or same quote.</p>
 
