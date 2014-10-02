@@ -31,7 +31,7 @@ def local(local_data, data, page):
 
         # Randomly selecting a quote.
         quote_num = randint(1, local_data['page' + str(page)])
-        quote = data.entries[quote_num].description
+        quote = data.entries[quote_num-1].description
 
         # If the quote selected has already been used in past 2 days then a new
         # one is selected.
@@ -65,6 +65,7 @@ def quote(local_data):
         count = 1
         url = url_base + str(count)
         data = feedparser.parse(url_base + str(count), 'utf-8')
+        temp_data = data
         while data['entries']:
             local_data['page' + str(count)] = len(data['entries'])
             count += 1
