@@ -3,29 +3,29 @@ Quoto
 
 Simple application which displays a Quote on regular intervals of time.
 
-##Features
+## Features
 - Same quote on a particular day  
 - Random quote everyday  
 - Quote fetched from my Goodreads' liked quotes
 - Quoted displayed on a regular interval (3 hours interval)
 
-##Tools Used
+## Tools Used
 - Python 3.4
 - QtDesigner4
 - PyQt 4
 - feedparser (python module)
 
-##How?
+## How?
 A json file (*local.json*) is created having the following format, the relevance of each key is explained in the comments.
 
 ```
 {
     "date": "",            # The current date
-    "update": "",       # The last date when the number of pages of Goodreads' quotes are updated
+    "update": "",          # The last date when the number of pages of Goodreads' quotes are updated
     "pages": ,             # Number of pages you have in the Goodreads' liked quotes
-    "pre_quo1": "",  # Last day quote
-    "pre_quo2": "",  # Last to last day quote
-    "today_quo": "" # today's quote
+    "pre_quo1": "",        # Last day quote
+    "pre_quo2": "",        # Last to last day quote
+    "today_quo": ""        # today's quote
 }
 ```
 
